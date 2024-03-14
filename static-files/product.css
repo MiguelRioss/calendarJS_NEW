@@ -1,0 +1,81 @@
+.container {
+  max-width: 960px;
+}
+img {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+/*
+ * Custom translucent site header
+ */
+ .position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.top-50 {
+  top: 50%;
+}
+
+.start-50 {
+  left: 50%;
+}
+.text-overlay {
+  color: #fff; /* White color for the text */
+  font-weight: bold; /* Adjust font weight for intensity */
+  font-size: 24px; /* Adjust font size for intensity */
+}
+.translate-middle {
+  transform: translate(-50%, -50%);
+}
+
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #8e8e8e;
+  transition: color .15s ease-in-out;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*Image Prop*/
+.img-fluid {
+  opacity: 0.8; /* Adjust the opacity value to make the image less visible */
+}
+
+.text-overlay {
+  color: white; /* Adjust the color of the text */
+}
+
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    flex: 1;
+  }
+}

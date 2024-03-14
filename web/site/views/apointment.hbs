@@ -1,0 +1,61 @@
+<div class="album py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Make Appointment</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form id="appointmentForm">
+          <div class="mb-3">
+            <label for="appointmentDate" class="form-label">Select a Date</label>
+            <input type="date" id="appointmentDate" class="form-control" required>
+          </div>
+          <div class="mb-3" id="optionContainer" style="display: none;">
+            <!-- Options will be dynamically added here -->
+            <!-- Display None makes the script Work-->
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitButton" style="display: none;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const appointmentDateInput = document.getElementById('appointmentDate');
+  const optionContainer = document.getElementById('optionContainer');
+  const submitButton = document.getElementById('submitButton');
+
+  appointmentDateInput.addEventListener('change', function() {
+    // Show the option container when date is selected
+    optionContainer.style.display = 'block';
+
+    // Add radio buttons for options dynamically (you can adjust this part as needed)
+    optionContainer.innerHTML = `
+      <div class="mb-3">
+        <label class="form-label">Select Option 1</label>
+        <div>
+          <input type="radio" id="option1" name="option1" value="Option 1">
+          <label for="option1">Option 1</label>
+        </div>
+        <div>
+          <input type="radio" id="option2" name="option1" value="Option 2">
+          <label for="option2">Option 2</label>
+        </div>
+        <div>
+          <input type="radio" id="option3" name="option1" value="Option 3">
+          <label for="option3">Option 3</label>
+        </div>
+      </div>
+    `;
+  });
+
+  // Listen for change events on the optionContainer to check if an option is selected
+  optionContainer.addEventListener('change', function() {
+    // If any option is selected, show the submit button
+    submitButton.style.display = 'block';
+  });
+});
+</script>
+
+
